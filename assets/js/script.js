@@ -8,16 +8,21 @@ document.addEventListener("DOMContentLoaded", function () {
     // This section creates the variable, closeButton
     // It looks for the element bc_close_button, in the HTML document by using document.getElementById("bc_close_button")
     var closeButton = document.getElementById("bc_close_button");
-
     // An event listener is then set to the 'click' of the closeButton element
     closeButton.addEventListener("click", function () {
         // When the closeButton is clicked a fade out event to the classlist is triggered on the inviteContainer which is associated with the the HTML div, bc_invite_container
         inviteContainer.classList.add("fade-out");
 
-        // This section then sets a timeout of half a second, 500 milliseconds
-        // When this timeout is reached, the 'hidden' attribute is set inviteContainer's CSS classlist         
-        setTimeout(function () {
+        // This section adds an event listener to the inviteContainer element. 
+        //The event being listened for is the "animationend" event, which is triggered when a CSS animation on the element ends.
+        inviteContainer.addEventListener("animationend", function () {
+            // This section removes the CSS class "fade-out" from the inviteContainer. 
+            inviteContainer.classList.remove("fade-out");
+            // This section adds the CSS class "hidden" to the inviteContainer
             inviteContainer.classList.add("hidden");
-        }, 500);
+        }, {
+            // This section ensures that the event is only triggered once
+            once: true
+        });
     });
 });

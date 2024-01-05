@@ -1,3 +1,13 @@
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
 /* 
 Defines styles for the main container of the live chat
 Specifies font, background color, positioning, width, and box properties
@@ -20,9 +30,9 @@ Uses flexbox for centering and responsiveness
     flex-wrap: wrap;
 }
 
-/* Styles applied when the container is set to be hidden, controlling display property */
+/* Styles applied when the container needs to fade out */
 #bc_invite_container.fade-out {
-    opacity: 0;
+    animation: fadeOut 1.5s ease forwards;
 }
 
 /* Styles applied when the container is set to be hidden, controlling display property */
@@ -56,6 +66,7 @@ Uses flexbox for centering and responsiveness
     padding: 0.7em 1em;
     width: 100%;
     display: flex;
+    justify-content: center;
 }
 
 /* Styles for the chat action button, including font size, dimensions, gradient background, cursor, color, border, and hover effect */
@@ -103,6 +114,38 @@ Uses flexbox for centering and responsiveness
     cursor: pointer;
     border: none;
     padding: 0;
+}
+
+/* Tooltip for the close button */
+#bc_close_button:hover::before {
+    content: "Close Invitation to Chat";
+    position: absolute;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Tooltip for the chat button */
+#bc_action_button:hover::before {
+    content: "Chat Now";
+    position: absolute;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* Media query for screens up to 768px (phones) */
