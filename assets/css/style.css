@@ -1,0 +1,136 @@
+/* 
+Defines styles for the main container of the live chat
+Specifies font, background color, positioning, width, and box properties
+Uses flexbox for centering and responsiveness 
+*/
+#bc_invite_container {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    top: 50%;
+    font-size: 14px;
+    position: fixed;
+    right: 50%;
+    width: 19em;
+    box-sizing: border-box;
+    box-shadow: -0.3em -0.3em 1em 0 rgba(0, 0, 0, 0.7);
+    transform: translate(50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Styles applied when the container is set to be hidden, controlling display property */
+#bc_invite_container.fade-out {
+    opacity: 0;
+}
+
+/* Styles applied when the container is set to be hidden, controlling display property */
+#bc_invite_container.hidden {
+    display: none;
+}
+
+/* Styles for the header within the chat container, setting background color, font size, and padding */
+#bc_header_container {
+    background-color: #0055A4;
+    font-size: 1em;
+    height: 3em;
+    box-sizing: border-box;
+    padding: 0.7em 1em;
+    width: 100%;
+}
+
+/* Styles for the title within the header, specifying font size, color, and display properties */
+#bc_title {
+    font-size: 1.4em;
+    color: white;
+    display: flex;
+}
+
+/* Styles for the body of the chat container, defining background color, font size, height, and padding */
+#bc_body_container {
+    background-color: yellow;
+    font-size: 1em;
+    height: 5em;
+    box-sizing: border-box;
+    padding: 0.7em 1em;
+    width: 100%;
+    display: flex;
+}
+
+/* Styles for the chat action button, including font size, dimensions, gradient background, cursor, color, border, and hover effect */
+#bc_action_button {
+    font-size: 1.5em;
+    height: 2em;
+    width: 7.7em;
+    background: #3e852e;
+    background: linear-gradient(to bottom, #3e852e 0%, #35a91b 100%);
+    cursor: pointer;
+    color: white;
+    border: 0;
+    text-decoration: none;
+    border-radius: 2px;
+    margin: 0 auto;
+}
+
+/* Styles the button while mouse hovers */
+#bc_action_button:hover {
+    background: #35a91b;
+    background: linear-gradient(to top, #3e852e 0%, #35a91b 100%);
+}
+
+/* Styles for the close container, specifying position, dimensions, background color, and text alignment */
+#bc_close_container {
+    font-size: 1em;
+    position: absolute;
+    height: 3em;
+    width: 3em;
+    background-color: yellow;
+    right: 0;
+    top: 0;
+    text-align: center;
+}
+
+/* Styles for the close button, setting dimensions, background, cursor, and using a background image for the close icon. */
+#bc_close_button {
+    font-size: 1em;
+    width: 3em;
+    height: 3em;
+    background-color: transparent;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVgAAAFYBAMAAADkQvlzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAVUExURQBVpI3X47zo7/P6/fb8+fn9+////9jdyVMAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAZdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuMTJDBGvsAAACzElEQVR42u3cS27bQBBF0UYMcB0eecxRlpBxlqBEAPe/BAfUB6TET1cBwXsF3DsnRB1LlkRWd2tEREREREREREREREREREREREREREREREREREREREREREREREREZfoYU0ddJCf785o6avpUwE7TmDrqqoBNPey/o6ZRAZt42PmoqwI28bDzUZPmZKO0M+x00bwMorQi2BStCjZFK4NN0OpgE7RC2DCtEjZMK4UN0mphg7Ri2BCtGjZEK4cN0OphA7QGsN20DrDdtBawnbQesJ20JrBdtC6wXbQ2sB20PrAdtEawp7ROsKe0VrAntF6wJ7RmsIe0brCHtHawB7S3p/HX6mR3aW/P4rNVoHWE3aW1hN2h9YTdoTWF3aR1hd2ktYXdoPWF3aA1hn2jdYZ9o7WGfaH1hn2hNYdd0brDrmjtYRe0/rAL2gKwT9oKsA/ae+awD9oSsCtae9gFrT/sgrYA7JO2Amxrw+1kf1c62Usr9DK4tkpvsLEObAnaxYfCWAe2AO0d9lcJ2vtXxB8VaJ9fvr8K0D5/1hSgXfxg9Kdd/BS3p11d5HCnXV0+Mqd9uTDnTftyydOa9u1isjPt22V6Y9qNGyC+tBu3lmxpN2/audJu3g41pd250exJu3ML35J2dzjCkXZ37MSQ9mCgx4/2YFTKjvZwCM2N9nC8z4z2ZHDSi/ZkJNWK9nTYdzCiPZ9Q96HtGFD3oe1ZVeFC27WowoW2byWQB23nQiAP2t7Vaw603YvXHGj7V1zqaQMLLvW0kVXCatrQImE1bWxlu5Y2uLBdSxvdjUFJG96MQUkb30FER5vYQERHm9n1RkWb2vRGRZvaTkhFm9uoadAsZcttgTXT/pG8wRJ/z0Ez95fbtq2J/tHmNsQbNB9hua0GW4lJOiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiL6n30DocAOJHCEjHMAAAAASUVORK5CYII=');
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+}
+
+/* Media query for screens up to 768px (phones) */
+@media only screen and (max-width: 1024px) {
+    #bc_invite_container {
+        bottom: 0;
+        top: auto;
+        height: auto;
+        transform: translate(50%, 20%);
+    }
+
+    #bc_title {
+        font-size: smaller;
+    }
+
+    #bc_action_button {
+        font-size: smaller;
+    }
+}
+
+/* Media query for screens up to 768px (phones) */
+@media only screen and (max-width: 768px) {
+    #bc_invite_container {
+        justify-content: center;
+        bottom: 0;
+        right: 0;
+        top: auto;
+        transform: translate(0, 0);
+        width: 100%;
+    }
+}
